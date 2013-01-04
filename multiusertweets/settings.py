@@ -115,6 +115,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'kombu.transport.django',
+    'djcelery',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -152,4 +154,11 @@ LOGGING = {
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config(
+    default='sqlite:////home/matt/Coding/PythonApp/multitwits/database.sqlite')
+
+# Celery configuration
+BROKER_BACKEND = 'django'
+
+import djcelery
+djcelery.setup_loader()
