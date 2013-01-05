@@ -11,7 +11,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.', # Add 'ptgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -164,3 +164,15 @@ BROKER_BACKEND = 'django'
 
 import djcelery
 djcelery.setup_loader()
+
+import os
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID_NAME')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_NAME')
+AWS_STORAGE_BUCKET_NAME = 'DjangoApp'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
