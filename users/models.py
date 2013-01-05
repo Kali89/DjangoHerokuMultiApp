@@ -15,7 +15,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
     users = models.ManyToManyField(User)
-    #text = models.TextField()
+    text = models.TextField(default='Default of text.')
 
     def __unicode__(self):
         return self.title
