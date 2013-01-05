@@ -58,9 +58,7 @@ MEDIA_URL = ''
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = ''
 
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -119,6 +117,7 @@ INSTALLED_APPS = (
     'kombu.transport.django',
     'djcelery',
     'users',
+    'storages',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -169,10 +168,10 @@ import os
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID_NAME')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_NAME')
-AWS_STORAGE_BUCKET_NAME = 'DjangoApp'
+AWS_STORAGE_BUCKET_NAME = 'newdjangoapp'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+STATIC_URL = 'http://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME +'/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
