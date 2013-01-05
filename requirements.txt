@@ -8,6 +8,7 @@ celery==3.0.12
 distribute==0.6.28
 dj-database-url==0.2.1
 django-celery==3.0.11
+django-evolution==0.6.7
 django-storages==1.1.5
 gunicorn==0.16.1
 kombu==2.5.4
