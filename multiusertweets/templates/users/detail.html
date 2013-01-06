@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="{{ STATIC_URL }}stylesheet.css" type="text/css" />
+{% extends "base.html" %}
+{% block title %}List of Posts {% endblock %}
 
+{% block content %}
 <h1>{{ user.username }}</h1>
 {% if post_list %}
     <ul>
@@ -10,3 +12,5 @@
 {% else %}
     <p> There aint no posts here </p>
 {% endif %}
+
+{% endblock %}

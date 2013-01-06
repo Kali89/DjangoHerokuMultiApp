@@ -1,8 +1,10 @@
 <!--# Using a version of Python < 1.5 -->
+{% extends "base.html" %}
 {% load url from future %}
 
-<link rel="stylesheet" href="{{ STATIC_URL }}stylesheet.css" type="text/css" />
+{% block title %} User List {% endblock %}
 
+{% block content %}
 <h1> Users </h1>
 
 {% if latest_user_list %}
@@ -16,3 +18,5 @@
     <h3> No users available. </h3>
     <p> And no functionality to make them! What a pickle.</p>
 {% endif %}
+
+{% endblock %}
