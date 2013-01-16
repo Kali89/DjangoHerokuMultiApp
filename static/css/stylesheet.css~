@@ -1,0 +1,11 @@
+html {
+	background-image:url('../img/IMAG0024.jpg');
+}
+
+h1 {
+	color: red;
+}
+
+p {
+	color: green;
+}
