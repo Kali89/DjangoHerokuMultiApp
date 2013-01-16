@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     #url(r'^users/', include('posts.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
-
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG:
+	urlpatterns += staticfiles_urlpatterns()
