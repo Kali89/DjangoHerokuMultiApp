@@ -1,5 +1,9 @@
 html {
-	background-image:url('../img/IMAG0024.jpg');
+	background: url('../img/IMAG0024.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 h1 {
