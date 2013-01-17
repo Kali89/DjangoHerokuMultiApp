@@ -11,7 +11,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/users/">Users</a></li>
-						<img src="{{ STATIC_URL }}img/IMAG0024.jpg" alt="Not working" />
+						<img src="{{ STATIC_URL }}/img/IMAG0024.jpg" alt="Not working" />
         </ul>
         {% endblock %}
     </div>
