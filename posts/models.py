@@ -7,3 +7,6 @@ class Post(models.Model):
     post = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(default=100)
+
+    def __unicode__(self):
+        return self.title
