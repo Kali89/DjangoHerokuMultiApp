@@ -6,7 +6,7 @@ from posts.models import Post
 def index(request):
     latest_user_list = User.objects.all
     context = {'latest_user_list': latest_user_list}
-    return render(request, 'users/index.html', context)
+    return render(request, 'posts/index.html', context)
 
 def user_profile(request, username):
     user = get_object_or_404(User, pk=username)
