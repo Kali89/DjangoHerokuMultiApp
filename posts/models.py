@@ -6,3 +6,4 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     post = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField(default=100)
