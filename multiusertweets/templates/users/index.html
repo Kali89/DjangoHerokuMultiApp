@@ -12,7 +12,6 @@
     <ul>
         {% for user in latest_user_list %}
 						{{ user.username }}
-            <a href="{% url profile %}"> {{ user.username }} </a>
         {% endfor %}
     </ul>
 {% else %}
