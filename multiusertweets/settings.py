@@ -8,8 +8,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-import os.path
-PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+import os
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 DATABASES = {
     'default': {
@@ -60,11 +60,9 @@ MEDIA_URL = ''
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PROJECT_DIR,'')
 
-
-
 # Additional locations of static files
-STATICFILES_DIRS = (
-	os.path.join(STATIC_ROOT, 'static'),
+STATICFILES_DIRS = (,
+        os.path.join(PROJECT_DIR, 'static/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -74,6 +72,16 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID_NAME')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_NAME')
+AWS_STORAGE_BUCKET_NAME = 'newdjangoapp'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_URL = 'http://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME +'/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '+o-r2ejvz7nmeibb#081t^7r@!01_d7=ztiz572uue&amp;u4(%n8-'
@@ -170,14 +178,4 @@ BROKER_BACKEND = 'django'
 import djcelery
 djcelery.setup_loader()
 
-import os
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID_NAME')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_NAME')
-AWS_STORAGE_BUCKET_NAME = 'newdjangoapp'
-
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-STATIC_URL = 'http://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME +'/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
