@@ -4,6 +4,7 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font: 14px/22px Georgia, "Times New Roman", Times, Serif;
 }
 
 h1 {
@@ -13,3 +14,24 @@ h1 {
 p {
 	color: green;
 }
+
+#topnav ul {
+	list-style-type: none;
+	line-height: 50px;
+}
+
+#topnav li {
+	display: inline;
+	float: left;
+}
+
+#topnav a {
+	text-decoration: none;
+}
+
+#topnav li a {
+	display: block;
+	border: 1px solid black;
+	padding: 0 20px;
+}
+
