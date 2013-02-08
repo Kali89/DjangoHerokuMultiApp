@@ -6,7 +6,7 @@
 </head>
 
 <body>
-		<div id ="topnav">
+		<div id="topnav">
 			{% block topnav %}
 				<ul>
 					<li><a href="/">Home</a></li>
