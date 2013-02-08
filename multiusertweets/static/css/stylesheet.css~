@@ -1,5 +1,5 @@
 html {
-	background: url('{{ STATIC_URL }}css/GreenBackground.jpg') no-repeat center center fixed;
+	background: url('{{ STATIC_URL }}img/GreenBackground.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
