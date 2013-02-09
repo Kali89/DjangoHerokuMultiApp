@@ -1,5 +1,5 @@
 html {
-	background-image: url("{{ STATIC_URL }}img/GreenBackground.jpg") no-repeat center center fixed;
+	background-image: url("multiusertweets/static/img/GreenBackground.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
